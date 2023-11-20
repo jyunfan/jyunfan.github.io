@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+         <loc>https://jyunfantsai.com/</loc>
+         <lastmod>2023-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jyunfantsai.com/blog/</loc>
+         <lastmod>2023-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jyunfantsai.com/blog/2023/01/31/hello-world/</loc>
+         <lastmod>2023-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jyunfantsai.com/blog/2023/10/25/learning-elixir/</loc>
+         <lastmod>2023-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jyunfantsai.com/blog/archive/2023/</loc>
+         <lastmod>2023-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://jyunfantsai.com/blog/category/elixir/</loc>
+         <lastmod>2023-11-20</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+</urlset>
