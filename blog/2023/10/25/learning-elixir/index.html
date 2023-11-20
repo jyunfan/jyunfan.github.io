@@ -8,6 +8,8 @@
       
       
       
+        <link rel="canonical" href="https://jyunfantsai.com/blog/2023/10/25/learning-elixir/">
+      
       
         <link rel="prev" href="../../../01/31/hello-world/">
       
@@ -44,16 +46,6 @@
     <script>__md_scope=new URL("../../../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
-  
-
-
-  
-  
-
-<script id="__analytics">function __md_analytics(){function n(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],n("js",new Date),n("config","G-GW9V7YBTS4"),document.addEventListener("DOMContentLoaded",function(){document.forms.search&&document.forms.search.query.addEventListener("blur",function(){this.value&&n("event","search",{search_term:this.value})}),document$.subscribe(function(){var a=document.forms.feedback;if(void 0!==a)for(var e of a.querySelectorAll("[type=submit]"))e.addEventListener("click",function(e){e.preventDefault();var t=document.location.pathname,e=this.getAttribute("data-md-value");n("event","feedback",{page:t,data:e}),a.firstElementChild.disabled=!0;e=a.querySelector(".md-feedback__note [data-md-value='"+e+"']");e&&(e.hidden=!1)}),a.hidden=!1}),location$.subscribe(function(e){n("config","G-GW9V7YBTS4",{page_path:e.pathname})})});var e=document.createElement("script");e.async=!0,e.src="https://www.googletagmanager.com/gtag/js?id=G-GW9V7YBTS4",document.getElementById("__analytics").insertAdjacentElement("afterEnd",e)}</script>
-  
-    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
-  
 
     
     
@@ -512,7 +504,6 @@
 
 <p>學習一個新語言總是有趣的，這次我想分享一下我學習 Elixir 的心得。</p>
 <p>推薦一個學習資源 <a href="https://thinkingelixir.com/available-courses/pattern-matching/">ThinkingElixir</a></p>
-<p>如果你還沒有 Elixir 的環境，建議可以從 <a href="https://livebook.dev/">Livebook</a> 開始，Livebook 是一個可以在瀏覽器上執行 Elixir 程式的環境，可以很快的上手 Elixir 的語法。</p>
 <p>先來比較一下 python 跟 Elixir 的資料結構，特別注意 Elixir 是 functional programming language，所以資料結構都是 immutable 的，
 而且沒有 object method，不管是 List 或是 Map 存取都是用 function。</p>
 <h1 id="tuple">Tuple</h1>
@@ -529,7 +520,6 @@ elem(data, 2) # "GO"
 put_elem(t, 2, "foo") # 修改第二個值會傳回一個新的 tuple {1, 2, "foo"}
 </code></pre>
 <h1 id="map">Map</h1>
-<p>Elixir 的 Map 跟 Python 的 Dictionary 很像，但是同樣的 Elixir 的 Map 是 immutable 的，如果修改 Map 內的值，會得到新的 Map 。</p>
 <p>Python: Dictionary</p>
 <pre><code>data = { "name" : "gary" , "age": 99 }
 </code></pre>
@@ -548,11 +538,7 @@ put_elem(t, 2, "foo") # 修改第二個值會傳回一個新的 tuple {1, 2, "fo
 <pre><code>%{data | age: 31, city: "Taipei"}
 </code></pre>
 <h1 id="list">List</h1>
-<p>Elixir 的 List 跟 Python 的 List 很像，但是同樣的 Elixir 的 List 是 immutable 的，如果修改 List 內的值，會得到新的 List 。
-另外 Elixir 的 List 不像是 Array，不能直接存取第 n 個元素。一般 List 的用途是要搭配Pattern，例如 [head | tail] ，之後再說明。</p>
 
-
-  
 
 
   
