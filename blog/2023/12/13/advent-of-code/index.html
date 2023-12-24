@@ -14,6 +14,8 @@
         <link rel="prev" href="../../11/datascience-elixir/">
       
       
+        <link rel="next" href="../../23/passkey/">
+      
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
@@ -63,6 +65,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#day-3" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -369,6 +376,26 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../../category/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../../category/elixir/" class="md-nav__link">
         
   
@@ -436,6 +463,8 @@
 <nav class="md-nav md-nav--secondary" aria-label="Table of contents">
   
   
+  
+    
   
   
 </nav>
@@ -515,11 +544,26 @@
         
 
 
-  <h1>Advent of code</h1>
-
 <p>一年一度的 <a href="https://adventofcode.com/">Advent of Code</a> 又開始了，今年是我第一次參加，正好用來練習 Elixir。</p>
 <p>Advent of Code 是馬拉松競賽，連續 25 天每天都有一個問題，每天的問題都會有兩個部分，第一部分的問題比較簡單，第二部分的問題會比較難，而且第二部分的問題會跟第一部分的問題有關聯。相對其他程式競賽，Advent of Code 有一個地方很特別，那就是他第二部份的問題的 Input 跟 第一部份是相同的，只是題目會比較難。
 做了幾天題目之後，我在解第一部份的問題時，會先猜猜看第二部份的問題會是什麼，然後再來寫第一部份的程式，這樣第二部份的問題就會比較好寫了。</p>
+<p>以下分享一些解題心得。</p>
+<h1 id="day-3">Day 3</h1>
+<p>Part 1</p>
+<p>觀察到每個 row 可以獨立計算，利用兩層迴圈，第一層迴圈是 row，第二層迴圈是 column，從左到右，遇到符號的時候，就把數字記起來。比如說，row的值是</p>
+<pre><code>..123*..
+</code></pre>
+<pre><code>. =&gt; 0
+. =&gt; 0
+1 =&gt; 1
+2 =&gt; 12
+3 =&gt; 123
+* =&gt; 123
+</code></pre>
+<p>當讀到*的時候，就知道把數字是123，因為123旁邊有符號，所以把這個數字記起來。</p>
+<p>Part 2</p>
+<p>跟 Part 1 一樣，只是要多做一件事情，就是紀錄每個符號連結到的數字有哪些，最後找出連結到兩個數字的符號，然後把這兩個數字相乘。</p>
+<p>Day 3 的 source 在 <a href="https://github.com/jyunfan/advent_of_code_2023/blob/main/day3.livemd">GitHub</a> 上，有興趣的朋友可以看看。</p>
 
 
 

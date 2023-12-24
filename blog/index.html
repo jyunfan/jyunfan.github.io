@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="category/elixir/">
+        <link rel="next" href="category/security/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -375,6 +375,26 @@
   
   
     <li class="md-nav__item">
+      <a href="category/security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="category/elixir/" class="md-nav__link">
         
   
@@ -461,6 +481,51 @@
     <div class="md-post__meta md-meta">
       <ul class="md-meta__list">
         <li class="md-meta__item">
+          <time datetime="2023-12-23 00:00:00">December 23, 2023</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/security/" class="md-meta__link">security</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              2 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="passkey"><a class="toclink" href="2023/12/23/passkey/">Passkey</a></h2>
+<p>資訊安全升級第一步: 脫離密碼，擁抱 Passkey</p>
+<p>有81%的資料外洩事故跟遺失<a href="https://locker.io/blog/10-password-statistics-2022">Report</a></p>
+<h2 id="passkey_1"><a class="toclink" href="2023/12/23/passkey/#passkey_1">什麼是 Passkey</a></h2>
+<p>認證方式
+密碼
+密碼+MFA</p>
+<p><img alt="alt text" src="img/passkey/passkey_step1.png" title="Title" />
+<img alt="alt text" src="img/passkey/passkey_step2.png" title="Title" />
+<img alt="alt text" src="img/passkey/passkey_step3.png" title="Title" />
+<img alt="alt text" src="img/passkey/passkey_step4.png" title="Title" /></p>
+    <nav class="md-post__action">
+      <a href="2023/12/23/passkey/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
           <time datetime="2023-12-13 00:00:00">December 13, 2023</time></li>
         
           <li class="md-meta__item">
@@ -485,6 +550,23 @@
 <p>一年一度的 <a href="https://adventofcode.com/">Advent of Code</a> 又開始了，今年是我第一次參加，正好用來練習 Elixir。</p>
 <p>Advent of Code 是馬拉松競賽，連續 25 天每天都有一個問題，每天的問題都會有兩個部分，第一部分的問題比較簡單，第二部分的問題會比較難，而且第二部分的問題會跟第一部分的問題有關聯。相對其他程式競賽，Advent of Code 有一個地方很特別，那就是他第二部份的問題的 Input 跟 第一部份是相同的，只是題目會比較難。
 做了幾天題目之後，我在解第一部份的問題時，會先猜猜看第二部份的問題會是什麼，然後再來寫第一部份的程式，這樣第二部份的問題就會比較好寫了。</p>
+<p>以下分享一些解題心得。</p>
+<h2 id="day-3"><a class="toclink" href="2023/12/13/advent-of-code/#day-3">Day 3</a></h2>
+<p>Part 1</p>
+<p>觀察到每個 row 可以獨立計算，利用兩層迴圈，第一層迴圈是 row，第二層迴圈是 column，從左到右，遇到符號的時候，就把數字記起來。比如說，row的值是</p>
+<pre><code>..123*..
+</code></pre>
+<pre><code>. =&gt; 0
+. =&gt; 0
+1 =&gt; 1
+2 =&gt; 12
+3 =&gt; 123
+* =&gt; 123
+</code></pre>
+<p>當讀到*的時候，就知道把數字是123，因為123旁邊有符號，所以把這個數字記起來。</p>
+<p>Part 2</p>
+<p>跟 Part 1 一樣，只是要多做一件事情，就是紀錄每個符號連結到的數字有哪些，最後找出連結到兩個數字的符號，然後把這兩個數字相乘。</p>
+<p>Day 3 的 source 在 <a href="https://github.com/jyunfan/advent_of_code_2023/blob/main/day3.livemd">GitHub</a> 上，有興趣的朋友可以看看。</p>
     <nav class="md-post__action">
       <a href="2023/12/13/advent-of-code/">
         Continue reading
@@ -618,12 +700,35 @@
   </header>
   <div class="md-post__content md-typeset">
     <h2 id="learning-elixir"><a class="toclink" href="2023/10/25/learning-elixir/">Learning elixir</a></h2>
-<p>學習一個新語言總是有趣的，這次我想分享一下我學習 Elixir 的心得。</p>
-<p>推薦一個學習資源 <a href="https://thinkingelixir.com/available-courses/pattern-matching/">ThinkingElixir</a></p>
+<p>第 N 次學習 Functional Programming Language 就上手。</p>
+<p>不論是上古神獸 Lisp，Haskell，或是現代一點的 Scala，如果你跟我一樣嘗試過學習 Functional Programming Language，但是都沒有成功，那麼 Elixir 是你最好的選擇。</p>
+<h2 id="pipe-operation-"><a class="toclink" href="2023/10/25/learning-elixir/#pipe-operation-">Pipe Operation - 括號終結者</a></h2>
+<p>我朋友 ypcat 推我入 Elixir 的坑的時候，舉出了一個 Elixir 的優點，那就是 Elixir 的語法很簡單，很像 Ruby，所以學習起來很容易，最重要的是可讀性很高，沒有一堆括號()。</p>
+<p>比如說我們要把字串的前後空白去掉，再轉成大寫，然後把 WORLD 換成 Gary，如果用 Python 寫的話，會是這樣：</p>
+<pre><code>astr = &quot; Hello world! &quot;
+astr.strip().upper().replace(&quot;WORLD&quot;, &quot;Gary&quot;)
+</code></pre>
+<p>這邊可以看到由於 Python 支援 object ，所以字串有 strip, upper, replace 這些 method 可以用，而且這些 method 都會回傳一個新的字串，所以可以一直串起來用。</p>
+<p>再來看一下 Elixir 的寫法：</p>
+<pre><code>astr = &quot; Hello world! &quot;
+String.trim(String.replace(String.upcase(astr), &quot;WORLD&quot;, &quot;Gary&quot;))
+</code></pre>
+<p>巢狀的括號看起來是不是很難懂? 這時候就可以用到 Pipe Operation 來改寫：</p>
+<pre><code>astr = &quot; Hello world! &quot;
+astr |&gt; String.trim() |&gt; String.upcase() |&gt; String.replace(&quot;WORLD&quot;, &quot;Gary&quot;)
+</code></pre>
+<p>背後的原則是，我們可以把這樣的 expression <code>g(f(x))</code> 改寫成 <code>x |&gt; f() | &gt; g()</code> ，這樣看起來是不是清爽多了？</p>
+<h2 id="thinking-elixir"><a class="toclink" href="2023/10/25/learning-elixir/#thinking-elixir">Thinking Elixir 入門課程</a></h2>
+<p>初次學習 Elixir 的朋友， 推薦從這邊開始，有兩堂入門的課程：
+ <a href="https://thinkingelixir.com/available-courses/pattern-matching/">ThinkingElixir</a></p>
 <p>如果你還沒有 Elixir 的環境，建議可以從 <a href="https://livebook.dev/">Livebook</a> 開始，Livebook 是一個可以在瀏覽器上執行 Elixir 程式的環境，可以很快的上手 Elixir 的語法。</p>
+<h2 id="elixir"><a class="toclink" href="2023/10/25/learning-elixir/#elixir">Elixir 的資料結構</a></h2>
 <p>先來比較一下 python 跟 Elixir 的資料結構，特別注意 Elixir 是 functional programming language，所以資料結構都是 immutable 的，
 而且沒有 object method，不管是 List 或是 Map 存取都是用 function。</p>
-<h2 id="tuple"><a class="toclink" href="2023/10/25/learning-elixir/#tuple">Tuple</a></h2>
+<h3 id="list"><a class="toclink" href="2023/10/25/learning-elixir/#list">List</a></h3>
+<p>Elixir 的 List 跟 Python 的 List 很像，但是同樣的 Elixir 的 List 是 immutable 的，如果修改 List 內的值，會得到新的 List 。
+另外 Elixir 的 List 不像是 Array，不能直接存取第 n 個元素。一般 List 的用途是要搭配Pattern，例如 [head | tail] ，之後再說明。</p>
+<h3 id="tuple"><a class="toclink" href="2023/10/25/learning-elixir/#tuple">Tuple</a></h3>
 <p>Python 的 Tuple 跟 Elixir 的 Tuple 很像，但是 Elixir 的 Tuple 是 immutable 的。</p>
 <pre><code># Python
 data = (1, 2, "GO") # Python
@@ -636,7 +741,7 @@ elem(data, 0) # 1
 elem(data, 2) # "GO"
 put_elem(t, 2, "foo") # 修改第二個值會傳回一個新的 tuple {1, 2, "foo"}
 </code></pre>
-<h2 id="map"><a class="toclink" href="2023/10/25/learning-elixir/#map">Map</a></h2>
+<h3 id="map"><a class="toclink" href="2023/10/25/learning-elixir/#map">Map</a></h3>
 <p>Elixir 的 Map 跟 Python 的 Dictionary 很像，但是同樣的 Elixir 的 Map 是 immutable 的，如果修改 Map 內的值，會得到新的 Map 。</p>
 <p>Python: Dictionary</p>
 <pre><code>data = { "name" : "gary" , "age": 99 }
@@ -655,9 +760,6 @@ put_elem(t, 2, "foo") # 修改第二個值會傳回一個新的 tuple {1, 2, "fo
 <p>更新 Map</p>
 <pre><code>%{data | age: 31, city: "Taipei"}
 </code></pre>
-<h2 id="list"><a class="toclink" href="2023/10/25/learning-elixir/#list">List</a></h2>
-<p>Elixir 的 List 跟 Python 的 List 很像，但是同樣的 Elixir 的 List 是 immutable 的，如果修改 List 內的值，會得到新的 List 。
-另外 Elixir 的 List 不像是 Array，不能直接存取第 n 個元素。一般 List 的用途是要搭配Pattern，例如 [head | tail] ，之後再說明。</p>
     <nav class="md-post__action">
       <a href="2023/10/25/learning-elixir/">
         Continue reading
