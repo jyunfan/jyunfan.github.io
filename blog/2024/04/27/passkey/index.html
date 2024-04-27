@@ -8,13 +8,11 @@
       
       
       
-        <link rel="canonical" href="https://jyunfantsai.com/blog/2023/12/13/advent-of-code/">
+        <link rel="canonical" href="https://jyunfantsai.com/blog/2024/04/27/passkey/">
       
       
-        <link rel="prev" href="../../11/datascience-elixir/">
+        <link rel="prev" href="../../../../2023/12/13/advent-of-code/">
       
-      
-        <link rel="next" href="../../../../2024/04/27/passkey/">
       
       
       <link rel="icon" href="../../../../../assets/images/favicon.png">
@@ -22,7 +20,7 @@
     
     
       
-        <title>Advent of code - Jyun-Fan Tsai 蔡濬帆</title>
+        <title>Passkey - Jyun-Fan Tsai 蔡濬帆</title>
       
     
     
@@ -76,11 +74,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#day-3" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -113,7 +106,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Advent of code
+              Passkey
             
           </span>
         </div>
@@ -494,8 +487,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -532,7 +523,7 @@
                     <li class="md-nav__item">
                       <div class="md-nav__link">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 19H5V8h14m-3-7v2H8V1H6v2H5c-1.11 0-2 .89-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2h-1V1m-1 11h-5v5h5v-5Z"/></svg>
-                        <time datetime="2023-12-13 00:00:00" class="md-ellipsis">December 13, 2023</time>
+                        <time datetime="2024-04-27 00:00:00" class="md-ellipsis">April 27, 2024</time>
                       </div>
                     </li>
                     
@@ -543,7 +534,7 @@
                           <span class="md-ellipsis">
                             in
                             
-                              <a href="../../../../category/elixir/">Elixir</a></span>
+                              <a href="../../../../category/security/">security</a></span>
                         </div>
                       </li>
                     
@@ -574,26 +565,21 @@
         
 
 
-<p>一年一度的 <a href="https://adventofcode.com/">Advent of Code</a> 又開始了，今年是我第一次參加，正好用來練習 Elixir。</p>
-<p>Advent of Code 是馬拉松競賽，連續 25 天每天都有一個問題，每天的問題都會有兩個部分，第一部分的問題比較簡單，第二部分的問題會比較難，而且第二部分的問題會跟第一部分的問題有關聯。相對其他程式競賽，Advent of Code 有一個地方很特別，那就是他第二部份的問題的 Input 跟 第一部份是相同的，只是題目會比較難。
-做了幾天題目之後，我在解第一部份的問題時，會先猜猜看第二部份的問題會是什麼，然後再來寫第一部份的程式，這樣第二部份的問題就會比較好寫了。</p>
-<p>以下分享一些解題心得。</p>
-<h1 id="day-3">Day 3</h1>
-<p>Part 1</p>
-<p>觀察到每個 row 可以獨立計算，利用兩層迴圈，第一層迴圈是 row，第二層迴圈是 column，從左到右，遇到符號的時候，就把數字記起來。比如說，row的值是</p>
-<pre><code>..123*..
-</code></pre>
-<pre><code>. =&gt; 0
-. =&gt; 0
-1 =&gt; 1
-2 =&gt; 12
-3 =&gt; 123
-* =&gt; 123
-</code></pre>
-<p>當讀到*的時候，就知道把數字是123，因為123旁邊有符號，所以把這個數字記起來。</p>
-<p>Part 2</p>
-<p>跟 Part 1 一樣，只是要多做一件事情，就是紀錄每個符號連結到的數字有哪些，最後找出連結到兩個數字的符號，然後把這兩個數字相乘。</p>
-<p>Day 3 的 source 在 <a href="https://github.com/jyunfan/advent_of_code_2023/blob/main/day3.livemd">GitHub</a> 上，有興趣的朋友可以看看。</p>
+  <h1>Passkey</h1>
+
+<p>來到了2024年，你還在用一個密碼登入所有網站嗎?
+來看看 Passkey 可以怎麼幫助你。</p>
+<p>首先，我們來看看密碼的問題：
+- 你有多少個密碼?
+- 你的密碼有多長?</p>
+<p>我們都聽密碼要長，要複雜，但是你真的能記得所有密碼嗎?許多人會用相同的密碼登入不同的網站，這樣一旦有一個網站被駭客入侵，你的所有帳號都會被盜走。</p>
+<p>你可以去 <a href="https://haveibeenpwned.com/Passwords">haveibeenpwned</a> 這個網站看看你的密碼有沒有被外洩過，如果有，你就應該趕快換掉。因為根據統計，有81%的資料外洩事故跟遺失密碼有關<a href="https://locker.io/blog/10-password-statistics-2022">Report</a></p>
+<p>現在我們了解到密碼的問題，那麼 Passkey 可以怎麼幫助你呢?密碼學家發明了公鑰加密，一個簡單的解釋是，你可以產生一組公鑰和私鑰，你可以把公鑰給別人，別人可以用公鑰加密訊息，但是只有你的私鑰可以解密。這樣你就不用擔心密碼被盜了。比如說Bob公開了他的公鑰P，Alice用P加密了一個訊息M，只有Bob的私鑰S才能解密M。這樣子Alice就可以驗證這個訊息是Bob發出的。</p>
+<p>為了方便使用，我們可以使用Google或是Apple的Passkey，這樣你就不用自己管理公鑰和私鑰了。</p>
+<p>首先，我們來看看Google的Passkey怎麼設定：
+在你的手機上登入 Google的帳號，點選進入 <a href="https://www.google.com/account/about/passkeys/">Passkey</a>，然後點選"取得密碼金鑰"，之後就可以利用手機的指紋或是臉部辨識來登入你的帳號。</p>
+<p>設定完Passkey之後，我們來看看如何使用Passkey登入網站，以下是露天拍賣的<a href="https://www1.ruten.com.tw/help/member/9503/">設定步驟</a>。用手機網頁或是露天App進入登入後就可以設定。</p>
+<p>既然Passkey這麼方便，為什麼不試試看呢? 目前唯一的理由就是支援Passkey的網站還不夠多，但是隨著時間的推移，我相信Passkey會變得越來越普及。</p>
 
 
   
