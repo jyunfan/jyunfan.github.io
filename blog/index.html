@@ -14,7 +14,7 @@
         <link rel="prev" href="..">
       
       
-        <link rel="next" href="category/security/">
+        <link rel="next" href="category/embedded/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -405,6 +405,26 @@
   
   
     <li class="md-nav__item">
+      <a href="category/embedded/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    embedded
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
       <a href="category/security/" class="md-nav__link">
         
   
@@ -504,6 +524,82 @@
       <header class="md-typeset">
         
       </header>
+      
+        <article class="md-post md-post--excerpt">
+  <header class="md-post__header">
+    
+    <div class="md-post__meta md-meta">
+      <ul class="md-meta__list">
+        <li class="md-meta__item">
+          <time datetime="2024-04-30 00:00:00">April 30, 2024</time></li>
+        
+          <li class="md-meta__item">
+            in
+            
+              <a href="category/embedded/" class="md-meta__link">embedded</a></li>
+        
+        
+          
+          <li class="md-meta__item">
+            
+              1 min read
+            
+          </li>
+        
+      </ul>
+      
+    </div>
+  </header>
+  <div class="md-post__content md-typeset">
+    <h2 id="introduction-embedded-systems-docker"><a class="toclink" href="2024/04/30/introduction-embedded-systems-docker/">Introduction embedded systems docker</a></h2>
+<p>Hi everyone joining the course <a href="https://www.coursera.org/learn/introduction-embedded-systems/home/welcome">Introduction to Embedded Systems Software and Development Environments</a> on Coursera. I found that installing VirtualBox according to the <a href="https://www.coursera.org/learn/introduction-embedded-systems/resources/jDf20">suggestion</a> required downloading a large file and setting up the environment. Instead, I am sharing the steps to set up the environment for the course using Docker.</p>
+<h3 id="step-1-install-docker"><a class="toclink" href="2024/04/30/introduction-embedded-systems-docker/#step-1-install-docker">Step 1: Install Docker</a></h3>
+<p>Get <a href="https://docs.docker.com/desktop/">Docker Desktop</a></p>
+<h3 id="step-2-pull-and-run-the-docker-image"><a class="toclink" href="2024/04/30/introduction-embedded-systems-docker/#step-2-pull-and-run-the-docker-image">Step 2: Pull and run the Docker image</a></h3>
+<pre><code>$ docker run -d  ubuntu:22.04 sleep 8640000
+</code></pre>
+<h3 id="step-3-access-the-docker-containe"><a class="toclink" href="2024/04/30/introduction-embedded-systems-docker/#step-3-access-the-docker-containe">Step 3: Access the Docker containe</a></h3>
+<pre><code>$ docker container ls
+</code></pre>
+<p>You will see the container ID and the name of the container. Use the container ID to access the container.</p>
+<table>
+<thead>
+<tr>
+<th>CONTAINER ID</th>
+<th>IMAGE</th>
+<th>COMMAND</th>
+<th>CREATED</th>
+<th>STATUS</th>
+<th>PORTS</th>
+<th>NAMES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>6ec4514d27ee</td>
+<td>ubuntu:22.04</td>
+<td>"sleep 864000"</td>
+<td>16 hours ago</td>
+<td>Up 16 hours</td>
+<td></td>
+<td>wizardly_nightingale</td>
+</tr>
+</tbody>
+</table>
+<pre><code>docker exec -it wizardly_nightingale /bin/bash
+</code></pre>
+<h3 id="step-4-install-the-required-packages"><a class="toclink" href="2024/04/30/introduction-embedded-systems-docker/#step-4-install-the-required-packages">Step 4: Install the required packages</a></h3>
+<p>Now you are inside the container. Install the required packages.</p>
+<pre><code>$ apt install build-essential unzip gcc-arm-none-eabi
+</code></pre>
+<p>You are all set to start the course. Enjoy learning!</p>
+    <nav class="md-post__action">
+      <a href="2024/04/30/introduction-embedded-systems-docker/">
+        Continue reading
+      </a>
+    </nav>
+  </div>
+</article>
       
         <article class="md-post md-post--excerpt">
   <header class="md-post__header">
